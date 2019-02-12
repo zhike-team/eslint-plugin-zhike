@@ -9,8 +9,11 @@ npm install --save-dev @zhike/eslint-plugin-zhike
 ### Configuration
 ```js
 {
+  plugins: [
+    '@zhike/zhike'
+  ],
   rules: {
-    'zhike/use-images-by-require': 'error'
+    '@zhike/zhike/use-images-by-require': 'error'
   }
 }
 ```
