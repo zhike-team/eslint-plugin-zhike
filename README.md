@@ -16,4 +16,4 @@ npm install --save-dev @zhike/eslint-plugin-zhike
 ```
 
 ### Rules
- - `use-images-by-require`: 静态图片必须以 “require()” 的方式引入
+ - `use-images-by-require` : 静态图片必须以 `require()` 的方式引入
