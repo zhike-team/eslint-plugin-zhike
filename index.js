@@ -119,6 +119,6 @@ module.exports = {
     'use-images-by-require': imageRequire
   },
   rulesConfig: {
-    'use-images-by-require': 'error'
+    'use-images-by-require': 0
   }
 }
