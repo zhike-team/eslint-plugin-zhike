@@ -53,23 +53,27 @@ function isUsedByRequired (src) {
         if (consequent.type === 'Literal') {
           if (consequent.value.startsWith(image_prefix)) return false
         } else {
-          return isUsedByRequired({
+          const recursiveTest = isUsedByRequired({
             value: {
               type: 'JSXExpressionContainer',
               expression: consequent
             }
           })
+
+          if (!recursiveTest) return false
         }
 
         if (alternate.type === 'Literal') {
           if (alternate.value.startsWith(image_prefix)) return false
         } else {
-          return isUsedByRequired({
+          const recursiveTest = isUsedByRequired({
             value: {
               type: 'JSXExpressionContainer',
               expression: alternate
             }
           })
+
+          if (!recursiveTest) return false
         }
 
         break
