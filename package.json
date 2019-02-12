@@ -1,0 +1,30 @@
+{
+  "name": "@zhike/eslint-plugin-zhike",
+  "version": "1.0.0",
+  "description": "custom eslint rules for apollon-frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhike-team/eslint-plugin-zhike.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "zhike"
+  ],
+  "author": "cfabregas <cfabregas@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhike-team/eslint-plugin-zhike/issues"
+  },
+  "homepage": "https://github.com/zhike-team/eslint-plugin-zhike#readme",
+  "peerDependencies": {
+    "eslint": ">= 5.10.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
