@@ -3,17 +3,17 @@ custom eslint rules for apollon-frontend
 
 ### Usage
 ```bash
-npm install --save-dev @zhike/eslint-plugin-zhike
+npm install --save-dev @zhike/eslint-plugin
 ```
 
 ### Configuration
 ```js
 {
   plugins: [
-    '@zhike/zhike'
+    '@zhike'
   ],
   rules: {
-    '@zhike/zhike/use-images-by-require': 'error'
+    '@zhike/use-images-by-require': 'error'
   }
 }
 ```
