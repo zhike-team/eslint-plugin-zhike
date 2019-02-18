@@ -45,34 +45,23 @@ function isUsedByRequired (src) {
         /**
          * 三元表达式
          * 形如：<img src={test ? test : '/images/test.png'} />
+         * consequent: test 为 true 时的取值
+         * alternate: test 为 false 时的取值
          */
-        const { consequent, alternate } = expression
+        ['consequent', 'alternate'].forEach(function (item) {
+          if (expression[item].type === 'Literal') {
+            if (expression[item].value.startsWith(image_prefix)) return false
+          } else {
+            const recursiveTest = isUsedByRequired({
+              value: {
+                type: 'JSXExpressionContainer',
+                expression: expression[item]
+              }
+            })
 
-        if (consequent.type === 'Literal') {
-          if (consequent.value.startsWith(image_prefix)) return false
-        } else {
-          const recursiveTest = isUsedByRequired({
-            value: {
-              type: 'JSXExpressionContainer',
-              expression: consequent
-            }
-          })
-
-          if (!recursiveTest) return false
-        }
-
-        if (alternate.type === 'Literal') {
-          if (alternate.value.startsWith(image_prefix)) return false
-        } else {
-          const recursiveTest = isUsedByRequired({
-            value: {
-              type: 'JSXExpressionContainer',
-              expression: alternate
-            }
-          })
-
-          if (!recursiveTest) return false
-        }
+            if (!recursiveTest) return false
+          }
+        })
 
         break
       }
